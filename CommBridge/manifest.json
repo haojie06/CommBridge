@@ -1,0 +1,13 @@
+{
+  "name": "CommBridge",
+  "entry": "index.js",
+  "type": "lse-nodejs",
+  "dependencies": [
+    {
+      "name": "legacy-script-engine-nodejs"
+    }
+  ],
+  "description": "Communicate with external systems through HTTP",
+  "author": "haojei06",
+  "version": "0.0.1"
+}

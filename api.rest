@@ -1,0 +1,8 @@
+POST /command
+Host: localhost:8080
+X-API-Key: f01cc8a54c
+Content-Type: application/json
+
+{
+    "command": "whitelist add xxx"
+}
