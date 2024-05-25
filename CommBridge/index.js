@@ -44,14 +44,14 @@ const server = http.createServer((req, res) => {
             const data = JSON.parse(body);
             logger.info(`received command: "${data.command}"`);
             //  执行命令
-            const ok = mc.runcmd(data.command);
-            if (ok) {
-                res.statusCode = 204;
-                res.end();
+            const { success, output } = mc.runcmdEx(data.command);
+            if (success) {
+                res.statusCode = 200;
+                res.end(output);
             }
             else {
                 res.statusCode = 500;
-                res.end("command failed");
+                res.end(output || "command error");
             }
         });
     }
@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
         res.end("not found");
     }
 });
-ll.registerPlugin("CommBridge", "Communicate with external systems through HTTP", [0, 0, 1], {});
+ll.registerPlugin("CommBridge", "Communicate with external systems through HTTP", [0, 0, 2], {});
 try {
     const defaultConfig = {
         port: 8080,
