@@ -1,7 +1,7 @@
 {
   "format_version": 2,
   "tooth": "github.com/haojie06/CommBridge",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "info": {
     "name": "CommBridge",
     "description": "Communicate with external systems through HTTP",
